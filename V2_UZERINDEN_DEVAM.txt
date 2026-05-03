@@ -1,0 +1,17 @@
+V2 üzerinden ilerleme notu
+
+Tasarım yönü:
+- Siyah, sade, büyük tipografi.
+- Çok hafif scroll animasyonları.
+- Ekipmanlar bilgi olarak yer alacak ama siteyi teknoloji vitrinine çevirmeyecek.
+- Apple hissi: az metin, bol boşluk, kontrollü hareket.
+
+V3'ten alınacaklar:
+- DJI Mic 2 bilgisi.
+- İletişim linkleri.
+- Gerekirse TR/EN dil desteği.
+
+V3'ten alınmayacaklar:
+- Ağır 3D modelleme hissi.
+- Fazla hareketli product showcase yapısı.
+- Ekipmanların ana karakter gibi öne çıkması.
