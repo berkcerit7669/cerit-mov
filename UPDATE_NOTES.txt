@@ -1,9 +1,0 @@
-Final update notes:
-- Model Shoot kartı artık ayrı Model Shoot sayfasına gider.
-- Model Shoot sayfasına dikey video oynatıcı eklendi; video aspect ratio korunur.
-- American Garage Editorial ayrı iş olarak kaldırıldı; kadın model American garage görselleri Model Shoot sayfasına taşındı.
-- IMDb Headshot ana sayfa crop’u sol odaklı düzeltildi.
-- OİT / Choose başlığı sadece Choose olarak güncellendi.
-- Off-road fotoğraf ve video içerikleri son zipten eklendi.
-- Tiburon SS24 sayfası üç konseptle ayrıldı: Iron Label, Surf Up, Adventure. Her konsept için ayrı sayfa oluşturuldu.
-- Eski Kuşak sayfasındaki video/color süreç görselleri kaldırıldı.
