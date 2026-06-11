@@ -1164,3 +1164,36 @@ body:has(.project-hero) .project-gallery.wide div{
     min-height: 360px !important;
   }
 }
+/* --- Vertical project video cover crop fix --- */
+body:has(.project-hero) .project-video-wrap.vertical-player{
+  width: min(420px, calc(100vw - 56px)) !important;
+  max-width: 420px !important;
+  aspect-ratio: 9 / 16 !important;
+  display: block !important;
+  overflow: hidden !important;
+  border-radius: 28px !important;
+  background: #000 !important;
+}
+
+body:has(.project-hero) .project-video-wrap.vertical-player video{
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-height: 78vh !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  background: #000 !important;
+}
+
+body:has(.project-hero) .project-video-wrap.vertical-player video[poster]{
+  object-fit: cover !important;
+  object-position: center center !important;
+}
+
+@media (max-width: 720px){
+  body:has(.project-hero) .project-video-wrap.vertical-player{
+    width: min(360px, calc(100vw - 32px)) !important;
+    max-width: calc(100vw - 32px) !important;
+    border-radius: 22px !important;
+  }
+}
