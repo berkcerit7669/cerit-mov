@@ -1311,3 +1311,12 @@ body:has(.project-hero) .project-video-wrap.horizontal-player video{
 .project-cover[style*="tiburon-general-02.jpg"]::after{
   bottom: -1px !important;
 }
+
+/* --- Stronger Surf Up hero bottom border override --- */
+body:has(.project-hero) .project-cover[style*="tiburon-general-02.jpg"]{
+  border-bottom-color: transparent !important;
+}
+
+body:has(.project-hero) .project-cover[style*="tiburon-general-02.jpg"]::after{
+  inset: 0 0 -2px 0 !important;
+}
