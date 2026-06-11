@@ -688,6 +688,39 @@ h1 {
   object-position: center center;
 }
 
+/* Reels fullscreen: keep vertical videos vertical */
+.project-video-grid .project-video-wrap.vertical-player video:fullscreen,
+.project-video-grid .project-video-wrap.vertical-player video:-webkit-full-screen{
+  width: 100vw !important;
+  height: 100vh !important;
+  max-width: 100vw !important;
+  max-height: 100vh !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  background: #000 !important;
+}
+
+.project-video-grid .project-video-wrap.vertical-player:fullscreen,
+.project-video-grid .project-video-wrap.vertical-player:-webkit-full-screen{
+  width: 100vw !important;
+  height: 100vh !important;
+  max-width: 100vw !important;
+  max-height: 100vh !important;
+  display: grid !important;
+  place-items: center !important;
+  background: #000 !important;
+}
+
+.project-video-grid .project-video-wrap.vertical-player:fullscreen video,
+.project-video-grid .project-video-wrap.vertical-player:-webkit-full-screen video{
+  width: auto !important;
+  height: 100vh !important;
+  max-width: 100vw !important;
+  max-height: 100vh !important;
+  object-fit: contain !important;
+  background: #000 !important;
+}
+
 .concept-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 .concept-card { display: block; min-height: 440px; position: relative; border: 1px solid var(--line); border-radius: 28px; overflow: hidden; background: #070707; text-decoration: none; color: var(--text); }
 .concept-card div { position: absolute; inset: 0; transition: transform 1s ease; background-size: cover; background-repeat: no-repeat; background-position: center center; background-color: #050505; }
