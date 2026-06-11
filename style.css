@@ -1057,19 +1057,7 @@ body:has(.project-hero) .contact-inner{
   }
 }
 
-/* --- Project gallery carousel layout --- */
-body:has(.project-hero) .project-gallery,
-body:has(.project-hero) .project-gallery.wide{
-  display: flex !important;
-  grid-template-columns: unset !important;
-  gap: 18px !important;
-  overflow-x: auto !important;
-  overflow-y: hidden !important;
-  scroll-snap-type: x mandatory !important;
-  scroll-padding-left: 0 !important;
-  padding-bottom: 18px !important;
-  -webkit-overflow-scrolling: touch !important;
-}
+
 
 body:has(.project-hero) .project-gallery::-webkit-scrollbar,
 body:has(.project-hero) .project-gallery.wide::-webkit-scrollbar{
@@ -1131,5 +1119,48 @@ body:has(.project-hero) .project-gallery.wide div:last-child{
     flex-basis: 86vw !important;
     width: 86vw !important;
     min-height: 390px !important;
+  }
+}/* --- Restore project galleries to original grid scale --- */
+body:has(.project-hero) .project-gallery,
+body:has(.project-hero) .project-gallery.wide{
+  display: grid !important;
+  overflow: visible !important;
+  scroll-snap-type: none !important;
+  padding-bottom: 0 !important;
+  gap: 16px !important;
+}
+
+body:has(.project-hero) .project-gallery{
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+}
+
+body:has(.project-hero) .project-gallery.wide{
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+}
+
+body:has(.project-hero) .project-gallery div,
+body:has(.project-hero) .project-gallery.wide div{
+  flex: initial !important;
+  width: auto !important;
+  min-height: 340px !important;
+  scroll-snap-align: none !important;
+  border-radius: 28px !important;
+  background-size: cover !important;
+  background-position: center center !important;
+}
+
+body:has(.project-hero) .project-gallery.wide div{
+  min-height: 430px !important;
+}
+
+@media (max-width: 900px){
+  body:has(.project-hero) .project-gallery,
+  body:has(.project-hero) .project-gallery.wide{
+    grid-template-columns: 1fr !important;
+  }
+
+  body:has(.project-hero) .project-gallery div,
+  body:has(.project-hero) .project-gallery.wide div{
+    min-height: 360px !important;
   }
 }
