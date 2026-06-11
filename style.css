@@ -1278,6 +1278,6 @@ body:has(.project-hero) .project-video-wrap.horizontal-player video{
 
 /* --- Surf Up hero overlay alignment fix --- */
 .project-cover[style*="tiburon-general-02.jpg"]::after{
-  inset: 0 0 -3px 0 !important;
+  inset: 0 0 -20px 0 !important;
   background: linear-gradient(to bottom, rgba(0,0,0,.04) 0%, rgba(0,0,0,.24) 48%, rgba(0,0,0,.78) 100%) !important;
 }
