@@ -523,7 +523,7 @@ h1 {
 .surf-up-hero .project-hero-copy {
   padding-bottom: 0;
   position: relative;
-  top: -72px;
+  top: -56px;
 }
 
 .surf-up-hero .project-cover {
@@ -612,6 +612,14 @@ h1 {
 .project-cover.cover-left { background-position: left center; }
 .project-cover.cover-right { background-position: right center; }
 .project-cover.cover-center { background-position: center center; }
+
+.iron-rebel-hero .project-cover.cover-center {
+  background-position: center 18%;
+}
+
+.adventure-hero .project-cover.cover-center {
+  background-position: center 18%;
+}
 .project-meta { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 34px; }
 .project-meta div { min-width: 0; border: 1px solid var(--line); border-radius: 24px; background: rgba(255,255,255,.055); padding: 18px; }
 .project-meta span { display: block; color: var(--muted); font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: .12em; }
@@ -883,6 +891,7 @@ h1 {
   .project-cover { min-height: 460px; }
   .surf-up-hero { padding-top: 118px; padding-bottom: 72px; }
   .surf-up-hero .project-hero-copy { position: relative; top: 0; transform: none; }
+  .surf-up-hero .project-hero-copy.reveal.visible { transform: none; }
   .surf-up-hero h1 { line-height: 1.08; margin: 18px 0 28px; }
   .surf-up-hero .project-cover { min-height: 460px; }
   .iron-rebel-hero,
@@ -939,49 +948,9 @@ h1 {
   .footer { flex-direction: column; gap: 8px; }
 }
 
-/* Final Surf Up hero override */
-.project-hero.surf-up-hero {
-  align-items: center !important;
-}
 
-.project-hero.surf-up-hero .project-hero-copy,
-.project-hero.surf-up-hero .project-hero-copy.reveal,
-.project-hero.surf-up-hero .project-hero-copy.reveal.visible {
-  position: relative !important;
-  top: -56px !important;
-  transform: none !important;
-  padding-bottom: 0 !important;
-}
-
-.project-hero.surf-up-hero .project-hero-copy h1 {
-  font-size: clamp(52px, 6vw, 88px) !important;
-  line-height: 1.04 !important;
-  margin: 18px 0 30px !important;
-  letter-spacing: -.055em !important;
-}
-
-.project-hero.surf-up-hero .project-hero-copy > p {
-  display: block !important;
-  max-width: 570px !important;
-  margin: 0 !important;
-  font-size: clamp(18px, 1.45vw, 22px) !important;
-  line-height: 1.58 !important;
-}
-
-.project-hero.surf-up-hero .project-meta {
-  margin-top: 34px !important;
-}
-
-@media (max-width: 900px) {
-  .project-hero.surf-up-hero .project-hero-copy,
-  .project-hero.surf-up-hero .project-hero-copy.reveal,
-  .project-hero.surf-up-hero .project-hero-copy.reveal.visible {
-    top: 0 !important;
-  }
-
-  .project-hero.surf-up-hero .project-hero-copy h1 {
-    font-size: clamp(48px, 12vw, 72px) !important;
-    line-height: 1.06 !important;
-    margin: 18px 0 26px !important;
-  }
+/* RainDogs video sizing */
+.project-video-wrap.horizontal-player {
+  width: min(100%, 980px);
+  max-width: 980px;
 }
