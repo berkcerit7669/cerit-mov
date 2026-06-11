@@ -550,7 +550,16 @@ h1 {
   letter-spacing: .13em;
 }
 .project-hero h1 { font-size: clamp(48px, 7.2vw, 104px); line-height: .92; margin: 18px 0 0; }
+.surf-up-hero h1 {
+  line-height: .98;
+  margin: 18px 0 22px;
+}
 .project-hero p { color: rgba(245,245,247,.76); font-size: clamp(18px, 1.7vw, 23px); line-height: 1.52; max-width: 650px; }
+.surf-up-hero .project-hero-copy > p {
+  margin-top: 0;
+  line-height: 1.48;
+  max-width: 560px;
+}
 .project-cover {
   width: 100%;
   min-height: 620px;
