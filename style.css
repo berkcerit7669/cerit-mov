@@ -522,7 +522,8 @@ h1 {
 
 .surf-up-hero .project-hero-copy {
   padding-bottom: 0;
-  transform: translateY(-92px);
+  position: relative;
+  top: -72px;
 }
 
 .surf-up-hero .project-cover {
@@ -544,15 +545,15 @@ h1 {
 
 .surf-up-hero h1 {
   display: block;
-  line-height: 1.02;
-  margin: 18px 0 28px;
+  line-height: 1.08;
+  margin: 18px 0 34px;
   letter-spacing: -.055em;
 }
 
 .surf-up-hero .project-hero-copy > p {
   display: block;
   margin-top: 0;
-  line-height: 1.5;
+  line-height: 1.55;
   max-width: 560px;
 }
 .project-cover {
@@ -810,10 +811,7 @@ h1 {
 .reveal.visible,
 .reveal.from-left.visible,
 .reveal.from-right.visible { opacity: 1; transform: translate3d(0,0,0); }
-.surf-up-hero .project-hero-copy.reveal.visible {
-  opacity: 1;
-  transform: translateY(-92px);
-}
+
 .delay-1 { transition-delay: .08s; }
 .delay-2 { transition-delay: .14s; }
 .delay-3 { transition-delay: .20s; }
