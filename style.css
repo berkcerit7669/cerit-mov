@@ -1275,6 +1275,7 @@ body:has(.project-hero) .project-video-wrap.horizontal-player video{
   background-size: cover !important;
   background-position: center 8% !important;
   box-shadow: none !important;
+  border-bottom-color: transparent !important;
 }
 
 .project-cover[style*="tiburon-general-02.jpg"]::before{
@@ -1284,5 +1285,4 @@ body:has(.project-hero) .project-video-wrap.horizontal-player video{
 .project-cover[style*="tiburon-general-02.jpg"]::after{
   inset: 0 !important;
   background: linear-gradient(to bottom, rgba(0,0,0,.05), rgba(0,0,0,.70)) !important;
-}
 }
