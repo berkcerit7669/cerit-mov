@@ -669,19 +669,34 @@ h1 {
   background-position: center center !important;
 }
 .project-video-wrap{
+  width: 100%;
+  max-width: 100%;
   aspect-ratio: 16 / 9;
   display: grid;
   place-items: center;
+  overflow: hidden;
+  border-radius: var(--radius-xl);
 }
+
 .project-video-wrap video{
+  display: block;
   width: 100% !important;
-  height: 100% !important;
+  height: auto !important;
+  max-height: 78vh;
   object-fit: contain !important;
   background: #000;
 }
+
 .project-video-wrap.vertical-player{
+  width: min(420px, 100%);
+  max-width: 100%;
   aspect-ratio: 9 / 16 !important;
+  margin: 0 auto;
 }
+
 .project-video-wrap.vertical-player video{
+  width: 100% !important;
+  height: 100% !important;
+  max-height: 82vh;
   object-fit: contain !important;
 }
