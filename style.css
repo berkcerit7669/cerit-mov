@@ -700,3 +700,45 @@ h1 {
   max-height: 82vh;
   object-fit: contain !important;
 }
+
+/* --- Final video sizing override: keep project videos inside page flow --- */
+.project-section .project-video-wrap,
+.project-video-wrap{
+  width: min(100%, 1080px) !important;
+  max-width: calc(100vw - 36px) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  aspect-ratio: 16 / 9 !important;
+  display: grid !important;
+  place-items: center !important;
+  overflow: hidden !important;
+  border-radius: var(--radius-xl) !important;
+  background: #000 !important;
+}
+
+.project-section .project-video-wrap video,
+.project-video-wrap video{
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-height: 72vh !important;
+  object-fit: contain !important;
+  background: #000 !important;
+}
+
+.project-section .project-video-wrap.vertical-player,
+.project-video-wrap.vertical-player{
+  width: min(420px, calc(100vw - 36px)) !important;
+  max-width: 100% !important;
+  aspect-ratio: 9 / 16 !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.project-section .project-video-wrap.vertical-player video,
+.project-video-wrap.vertical-player video{
+  width: 100% !important;
+  height: 100% !important;
+  max-height: 82vh !important;
+  object-fit: contain !important;
+}
