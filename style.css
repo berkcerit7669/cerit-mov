@@ -512,6 +512,23 @@ h1 {
   padding-bottom: 92px;
 }
 .project-hero-copy { padding-bottom: 22px; }
+
+/* Surf Up hero alignment */
+.surf-up-hero {
+  align-items: center;
+  padding-top: 118px;
+  padding-bottom: 78px;
+}
+
+.surf-up-hero .project-hero-copy {
+  padding-bottom: 0;
+  transform: translateY(-18px);
+}
+
+.surf-up-hero .project-cover {
+  min-height: 590px;
+  background-position: center 12%;
+}
 .project-label {
   display: inline-flex;
   gap: 10px;
@@ -816,6 +833,9 @@ h1 {
   .project-hero,
   .project-grid { grid-template-columns: 1fr; }
   .project-cover { min-height: 460px; }
+  .surf-up-hero { padding-top: 118px; padding-bottom: 72px; }
+  .surf-up-hero .project-hero-copy { transform: none; }
+  .surf-up-hero .project-cover { min-height: 460px; }
   .project-meta,
   .project-gallery,
   .project-gallery.wide { grid-template-columns: 1fr; }
