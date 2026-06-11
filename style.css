@@ -549,11 +549,18 @@ h1 {
 }
 
 .adventure-hero .project-cover {
-  background-position: center 14%;
+  background-position: center 18%;
 }
 
 .iron-rebel-reels-section .project-video-grid {
   grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.adventure-reels-section .project-video-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .project-label {
   display: inline-flex;
@@ -882,7 +889,11 @@ h1 {
   .adventure-hero { padding-top: 118px; padding-bottom: 72px; }
   .iron-rebel-hero .project-cover,
   .adventure-hero .project-cover { min-height: 460px; }
-  .iron-rebel-reels-section .project-video-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .iron-rebel-reels-section .project-video-grid,
+  .adventure-reels-section .project-video-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 760px;
+  }
   .project-meta,
   .project-gallery,
   .project-gallery.wide { grid-template-columns: 1fr; }
@@ -900,7 +911,11 @@ h1 {
   .menu-button { display: block; }
   .project-video-grid { grid-template-columns: 1fr; gap: 18px; }
   .project-video-grid .project-video-wrap.vertical-player { width: min(360px, 100%); margin: 0 auto; }
-  .iron-rebel-reels-section .project-video-grid { grid-template-columns: 1fr; }
+  .iron-rebel-reels-section .project-video-grid,
+  .adventure-reels-section .project-video-grid {
+    grid-template-columns: 1fr;
+    max-width: 360px;
+  }
   .site-header { height: 58px; }
   .section-pad { width: min(100% - 28px, var(--max)); padding: 86px 0; }
   .hero { padding: 124px 14px 64px; gap: 34px; }
