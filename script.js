@@ -40,38 +40,44 @@ window.addEventListener('mouseleave', () => {
 });
 
 // Brand logo behavior: on the home page, scroll to top with controlled speed.
-// Project pages keep their normal ../index.html#top links and reload the home page.
-document.addEventListener('DOMContentLoaded', () => {
-  const homeBrand = document.querySelector('[data-home-brand]');
-  if (!homeBrand) return;
-
+// This uses a capturing click listener so the browser cannot jump instantly to #top first.
+(() => {
   const scrollToTopSmooth = () => {
-    const startY = window.scrollY;
-    const duration = 1600;
+    const startY = window.scrollY || window.pageYOffset;
+    if (startY <= 0) return;
+
+    const duration = 1800;
     const startTime = performance.now();
 
-    const easeInOutCubic = (t) => (
+    const easeInOutQuad = (t) => (
       t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2
     );
 
     const animate = (currentTime) => {
       const elapsed = currentTime - startTime;
       const progress = Math.min(elapsed / duration, 1);
-      const easedProgress = easeInOutCubic(progress);
+      const easedProgress = easeInOutQuad(progress);
+      const nextY = Math.round(startY * (1 - easedProgress));
 
-      window.scrollTo(0, startY * (1 - easedProgress));
+      window.scrollTo(0, nextY);
 
       if (progress < 1) {
         requestAnimationFrame(animate);
+      } else {
+        window.scrollTo(0, 0);
+        window.history.replaceState(null, '', window.location.pathname);
       }
     };
 
     requestAnimationFrame(animate);
   };
 
-  homeBrand.addEventListener('click', (event) => {
+  document.addEventListener('click', (event) => {
+    const homeBrand = event.target.closest('[data-home-brand]');
+    if (!homeBrand) return;
+
     event.preventDefault();
-    window.history.replaceState(null, '', window.location.pathname);
+    event.stopPropagation();
     scrollToTopSmooth();
-  });
-});
+  }, true);
+})();
