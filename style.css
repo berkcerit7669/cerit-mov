@@ -525,16 +525,6 @@ h1 {
   transform: translateY(-18px);
 }
 
-.surf-up-hero h1 {
-  line-height: .98;
-  margin-bottom: 18px;
-}
-
-.surf-up-hero .project-hero-copy > p {
-  margin-top: 0;
-  line-height: 1.48;
-}
-
 .surf-up-hero .project-cover {
   min-height: 590px;
   background-position: center 12%;
@@ -550,14 +540,19 @@ h1 {
   letter-spacing: .13em;
 }
 .project-hero h1 { font-size: clamp(48px, 7.2vw, 104px); line-height: .92; margin: 18px 0 0; }
-.surf-up-hero h1 {
-  line-height: .98;
-  margin: 18px 0 22px;
-}
 .project-hero p { color: rgba(245,245,247,.76); font-size: clamp(18px, 1.7vw, 23px); line-height: 1.52; max-width: 650px; }
+
+.surf-up-hero h1 {
+  display: block;
+  line-height: 1.08;
+  margin: 18px 0 34px;
+  letter-spacing: -.055em;
+}
+
 .surf-up-hero .project-hero-copy > p {
+  display: block;
   margin-top: 0;
-  line-height: 1.48;
+  line-height: 1.5;
   max-width: 560px;
 }
 .project-cover {
@@ -853,7 +848,8 @@ h1 {
   .project-grid { grid-template-columns: 1fr; }
   .project-cover { min-height: 460px; }
   .surf-up-hero { padding-top: 118px; padding-bottom: 72px; }
-  .surf-up-hero .project-hero-copy { transform: none; }
+.surf-up-hero .project-hero-copy { transform: none; }
+.surf-up-hero h1 { line-height: 1.08; margin: 18px 0 28px; }
   .surf-up-hero .project-cover { min-height: 460px; }
   .project-meta,
   .project-gallery,
