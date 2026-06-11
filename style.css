@@ -1269,3 +1269,9 @@ body:has(.project-hero) .project-video-wrap.horizontal-player video{
 .project-gallery div[style*="tiburon-general-02.jpg"]{
   background-position: center 5% !important;
 }
+
+/* --- Surf Up hero image position fix: hide bright bottom edge without removing border --- */
+.project-cover[style*="tiburon-general-02.jpg"]{
+  background-position: center 2% !important;
+  background-size: auto 108% !important;
+}
