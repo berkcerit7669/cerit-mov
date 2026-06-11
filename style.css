@@ -530,6 +530,31 @@ h1 {
   min-height: 590px;
   background-position: center 12%;
 }
+
+/* Tiburon concept hero alignment */
+.iron-rebel-hero,
+.adventure-hero {
+  align-items: center;
+  padding-top: 118px;
+  padding-bottom: 78px;
+}
+
+.iron-rebel-hero .project-cover,
+.adventure-hero .project-cover {
+  min-height: 590px;
+}
+
+.iron-rebel-hero .project-cover {
+  background-position: center 18%;
+}
+
+.adventure-hero .project-cover {
+  background-position: center 14%;
+}
+
+.iron-rebel-reels-section .project-video-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
 .project-label {
   display: inline-flex;
   gap: 10px;
@@ -853,6 +878,11 @@ h1 {
   .surf-up-hero .project-hero-copy { position: relative; top: 0; transform: none; }
   .surf-up-hero h1 { line-height: 1.08; margin: 18px 0 28px; }
   .surf-up-hero .project-cover { min-height: 460px; }
+  .iron-rebel-hero,
+  .adventure-hero { padding-top: 118px; padding-bottom: 72px; }
+  .iron-rebel-hero .project-cover,
+  .adventure-hero .project-cover { min-height: 460px; }
+  .iron-rebel-reels-section .project-video-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .project-meta,
   .project-gallery,
   .project-gallery.wide { grid-template-columns: 1fr; }
@@ -870,6 +900,7 @@ h1 {
   .menu-button { display: block; }
   .project-video-grid { grid-template-columns: 1fr; gap: 18px; }
   .project-video-grid .project-video-wrap.vertical-player { width: min(360px, 100%); margin: 0 auto; }
+  .iron-rebel-reels-section .project-video-grid { grid-template-columns: 1fr; }
   .site-header { height: 58px; }
   .section-pad { width: min(100% - 28px, var(--max)); padding: 86px 0; }
   .hero { padding: 124px 14px 64px; gap: 34px; }
