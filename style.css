@@ -742,3 +742,74 @@ h1 {
   max-height: 82vh !important;
   object-fit: contain !important;
 }
+
+/* --- FINAL PROJECT VIDEO FIX / 2026-06-11 --- */
+.project-section:has(.project-video-wrap){
+  width: min(100% - 36px, var(--max)) !important;
+  max-width: var(--max) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  overflow: hidden !important;
+}
+
+.project-section:has(.project-video-wrap) .section-head,
+.project-section:has(.project-video-wrap) .section-kicker,
+.project-section:has(.project-video-wrap) h2{
+  max-width: 980px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.project-video-wrap{
+  width: min(100%, 980px) !important;
+  max-width: 980px !important;
+  margin: 0 auto !important;
+  aspect-ratio: 16 / 9 !important;
+  display: grid !important;
+  place-items: center !important;
+  overflow: hidden !important;
+  border-radius: 28px !important;
+  background: #000 !important;
+  box-shadow: 0 28px 90px rgba(0,0,0,.38) !important;
+}
+
+.project-video-wrap video{
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 552px !important;
+  object-fit: contain !important;
+  background: #000 !important;
+}
+
+.project-video-wrap.vertical-player{
+  width: min(380px, 100%) !important;
+  max-width: calc(100vw - 36px) !important;
+  aspect-ratio: 9 / 16 !important;
+}
+
+.project-video-wrap.vertical-player video{
+  width: 100% !important;
+  height: 100% !important;
+  max-height: 78vh !important;
+  object-fit: contain !important;
+}
+
+@media (max-width: 720px){
+  .project-section:has(.project-video-wrap){
+    width: min(100% - 24px, var(--max)) !important;
+  }
+
+  .project-video-wrap{
+    width: 100% !important;
+    max-width: 100% !important;
+    border-radius: 20px !important;
+  }
+
+  .project-video-wrap video{
+    max-height: none !important;
+  }
+}
