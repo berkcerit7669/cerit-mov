@@ -1286,3 +1286,28 @@ body:has(.project-hero) .project-video-wrap.horizontal-player video{
   inset: 0 !important;
   background: linear-gradient(to bottom, rgba(0,0,0,.05), rgba(0,0,0,.70)) !important;
 }
+
+/* --- Media bottom seam fix --- */
+.showreel-video,
+.video-frame video,
+.project-video-wrap video{
+  display: block !important;
+  vertical-align: bottom !important;
+}
+
+.video-frame,
+.project-video-wrap{
+  overflow: hidden !important;
+}
+
+.video-frame{
+  margin-bottom: -1px !important;
+}
+
+.project-cover[style*="tiburon-general-02.jpg"]{
+  overflow: hidden !important;
+}
+
+.project-cover[style*="tiburon-general-02.jpg"]::after{
+  bottom: -1px !important;
+}
