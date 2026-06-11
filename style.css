@@ -1260,3 +1260,7 @@ body:has(.project-hero) .project-video-wrap.horizontal-player video{
     border-radius: 20px !important;
   }
 }
+/* --- Tiburon page: Surf Up concept cover crop --- */
+.concept-card[href="tiburon-surf-up.html"] div{
+  background-position: center 18% !important;
+}
