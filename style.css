@@ -1197,3 +1197,34 @@ body:has(.project-hero) .project-video-wrap.vertical-player video[poster]{
     border-radius: 22px !important;
   }
 }
+/* --- Horizontal project video: stable poster/play size --- */
+body:has(.project-hero) .project-video-wrap.horizontal-player{
+  width: min(100%, 920px) !important;
+  max-width: 920px !important;
+  aspect-ratio: 16 / 9 !important;
+  height: auto !important;
+  display: block !important;
+  overflow: hidden !important;
+  border-radius: 26px !important;
+  background: #000 !important;
+  box-shadow: 0 28px 90px rgba(0,0,0,.38) !important;
+}
+
+body:has(.project-hero) .project-video-wrap.horizontal-player video{
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: none !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  background: #000 !important;
+}
+
+@media (max-width: 720px){
+  body:has(.project-hero) .project-video-wrap.horizontal-player{
+    width: 100% !important;
+    max-width: 100% !important;
+    border-radius: 20px !important;
+  }
+}
