@@ -1228,3 +1228,35 @@ body:has(.project-hero) .project-video-wrap.horizontal-player video{
     border-radius: 20px !important;
   }
 }
+/* --- Bodybuilding horizontal video: fix native control bar position --- */
+body:has(.project-hero) .project-video-wrap.horizontal-player{
+  width: min(100%, 920px) !important;
+  max-width: 920px !important;
+  height: auto !important;
+  aspect-ratio: auto !important;
+  display: block !important;
+  overflow: hidden !important;
+  border-radius: 26px !important;
+  background: #000 !important;
+}
+
+body:has(.project-hero) .project-video-wrap.horizontal-player video{
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  max-width: 100% !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  background: #000 !important;
+  border-radius: 26px !important;
+}
+
+@media (max-width: 720px){
+  body:has(.project-hero) .project-video-wrap.horizontal-player,
+  body:has(.project-hero) .project-video-wrap.horizontal-player video{
+    width: 100% !important;
+    max-width: 100% !important;
+    border-radius: 20px !important;
+  }
+}
