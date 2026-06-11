@@ -1267,5 +1267,5 @@ body:has(.project-hero) .project-video-wrap.horizontal-player video{
 
 /* --- Tiburon page: Surf Up image crop in SS24 gallery --- */
 .project-gallery div[style*="tiburon-general-02.jpg"]{
-  background-position: center 18% !important;
+  background-position: center 5% !important;
 }
