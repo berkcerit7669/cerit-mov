@@ -40,14 +40,27 @@ window.addEventListener('mouseleave', () => {
 });
 
 // Brand logo behavior: on the home page, scroll to top with controlled speed.
-// This uses a capturing click listener so the browser cannot jump instantly to #top first.
+// The temporary scrollBehavior override prevents CSS smooth-scroll from fighting the custom animation.
 (() => {
+  let brandScrollFrame = null;
+
   const scrollToTopSmooth = () => {
     const startY = window.scrollY || window.pageYOffset;
     if (startY <= 0) return;
 
+    if (brandScrollFrame) {
+      cancelAnimationFrame(brandScrollFrame);
+    }
+
     const duration = 1800;
     const startTime = performance.now();
+    const html = document.documentElement;
+    const body = document.body;
+    const previousHtmlScrollBehavior = html.style.scrollBehavior;
+    const previousBodyScrollBehavior = body.style.scrollBehavior;
+
+    html.style.scrollBehavior = 'auto';
+    body.style.scrollBehavior = 'auto';
 
     const easeInOutQuad = (t) => (
       t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2
@@ -62,14 +75,18 @@ window.addEventListener('mouseleave', () => {
       window.scrollTo(0, nextY);
 
       if (progress < 1) {
-        requestAnimationFrame(animate);
-      } else {
-        window.scrollTo(0, 0);
-        window.history.replaceState(null, '', window.location.pathname);
+        brandScrollFrame = requestAnimationFrame(animate);
+        return;
       }
+
+      window.scrollTo(0, 0);
+      window.history.replaceState(null, '', window.location.pathname);
+      html.style.scrollBehavior = previousHtmlScrollBehavior;
+      body.style.scrollBehavior = previousBodyScrollBehavior;
+      brandScrollFrame = null;
     };
 
-    requestAnimationFrame(animate);
+    brandScrollFrame = requestAnimationFrame(animate);
   };
 
   document.addEventListener('click', (event) => {
@@ -77,7 +94,7 @@ window.addEventListener('mouseleave', () => {
     if (!homeBrand) return;
 
     event.preventDefault();
-    event.stopPropagation();
+    event.stopImmediatePropagation();
     scrollToTopSmooth();
   }, true);
 })();
