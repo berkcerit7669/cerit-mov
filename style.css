@@ -1056,3 +1056,80 @@ body:has(.project-hero) .contact-inner{
     max-height: none !important;
   }
 }
+
+/* --- Project gallery carousel layout --- */
+body:has(.project-hero) .project-gallery,
+body:has(.project-hero) .project-gallery.wide{
+  display: flex !important;
+  grid-template-columns: unset !important;
+  gap: 18px !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  scroll-snap-type: x mandatory !important;
+  scroll-padding-left: 0 !important;
+  padding-bottom: 18px !important;
+  -webkit-overflow-scrolling: touch !important;
+}
+
+body:has(.project-hero) .project-gallery::-webkit-scrollbar,
+body:has(.project-hero) .project-gallery.wide::-webkit-scrollbar{
+  height: 8px !important;
+}
+
+body:has(.project-hero) .project-gallery::-webkit-scrollbar-track,
+body:has(.project-hero) .project-gallery.wide::-webkit-scrollbar-track{
+  background: rgba(255,255,255,.06) !important;
+  border-radius: 999px !important;
+}
+
+body:has(.project-hero) .project-gallery::-webkit-scrollbar-thumb,
+body:has(.project-hero) .project-gallery.wide::-webkit-scrollbar-thumb{
+  background: rgba(255,255,255,.24) !important;
+  border-radius: 999px !important;
+}
+
+body:has(.project-hero) .project-gallery div,
+body:has(.project-hero) .project-gallery.wide div{
+  flex: 0 0 min(78vw, 860px) !important;
+  width: min(78vw, 860px) !important;
+  min-height: 580px !important;
+  scroll-snap-align: start !important;
+  border-radius: 32px !important;
+  background-size: cover !important;
+  background-position: center center !important;
+}
+
+body:has(.project-hero) .project-gallery div:first-child,
+body:has(.project-hero) .project-gallery.wide div:first-child{
+  margin-left: 0 !important;
+}
+
+body:has(.project-hero) .project-gallery div:last-child,
+body:has(.project-hero) .project-gallery.wide div:last-child{
+  margin-right: 0 !important;
+}
+
+@media (max-width: 900px){
+  body:has(.project-hero) .project-gallery,
+  body:has(.project-hero) .project-gallery.wide{
+    gap: 14px !important;
+    padding-bottom: 14px !important;
+  }
+
+  body:has(.project-hero) .project-gallery div,
+  body:has(.project-hero) .project-gallery.wide div{
+    flex-basis: 88vw !important;
+    width: 88vw !important;
+    min-height: 480px !important;
+    border-radius: 24px !important;
+  }
+}
+
+@media (max-width: 560px){
+  body:has(.project-hero) .project-gallery div,
+  body:has(.project-hero) .project-gallery.wide div{
+    flex-basis: 86vw !important;
+    width: 86vw !important;
+    min-height: 390px !important;
+  }
+}
