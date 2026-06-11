@@ -38,3 +38,16 @@ window.addEventListener('mouseleave', () => {
   if (!cursorGlow) return;
   cursorGlow.style.opacity = '0';
 });
+
+// Brand logo behavior: on the home page, scroll to top instead of reloading.
+// Project pages keep their normal ../index.html#top links and reload the home page.
+document.addEventListener('DOMContentLoaded', () => {
+  const homeBrand = document.querySelector('[data-home-brand]');
+  if (!homeBrand) return;
+
+  homeBrand.addEventListener('click', (event) => {
+    event.preventDefault();
+    window.history.replaceState(null, '', window.location.pathname);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
