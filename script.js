@@ -39,15 +39,39 @@ window.addEventListener('mouseleave', () => {
   cursorGlow.style.opacity = '0';
 });
 
-// Brand logo behavior: on the home page, scroll to top instead of reloading.
+// Brand logo behavior: on the home page, scroll to top with controlled speed.
 // Project pages keep their normal ../index.html#top links and reload the home page.
 document.addEventListener('DOMContentLoaded', () => {
   const homeBrand = document.querySelector('[data-home-brand]');
   if (!homeBrand) return;
 
+  const scrollToTopSmooth = () => {
+    const startY = window.scrollY;
+    const duration = 900;
+    const startTime = performance.now();
+
+    const easeInOutCubic = (t) => (
+      t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2
+    );
+
+    const animate = (currentTime) => {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const easedProgress = easeInOutCubic(progress);
+
+      window.scrollTo(0, startY * (1 - easedProgress));
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      }
+    };
+
+    requestAnimationFrame(animate);
+  };
+
   homeBrand.addEventListener('click', (event) => {
     event.preventDefault();
     window.history.replaceState(null, '', window.location.pathname);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    scrollToTopSmooth();
   });
 });
