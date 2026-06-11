@@ -522,7 +522,7 @@ h1 {
 
 .surf-up-hero .project-hero-copy {
   padding-bottom: 0;
-  transform: translateY(-18px);
+  transform: translateY(-92px);
 }
 
 .surf-up-hero .project-cover {
@@ -544,8 +544,8 @@ h1 {
 
 .surf-up-hero h1 {
   display: block;
-  line-height: 1.08;
-  margin: 18px 0 34px;
+  line-height: 1.02;
+  margin: 18px 0 28px;
   letter-spacing: -.055em;
 }
 
@@ -848,8 +848,8 @@ h1 {
   .project-grid { grid-template-columns: 1fr; }
   .project-cover { min-height: 460px; }
   .surf-up-hero { padding-top: 118px; padding-bottom: 72px; }
-.surf-up-hero .project-hero-copy { transform: none; }
-.surf-up-hero h1 { line-height: 1.08; margin: 18px 0 28px; }
+  .surf-up-hero .project-hero-copy { transform: none; }
+  .surf-up-hero h1 { line-height: 1.08; margin: 18px 0 28px; }
   .surf-up-hero .project-cover { min-height: 460px; }
   .project-meta,
   .project-gallery,
