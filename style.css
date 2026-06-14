@@ -253,9 +253,7 @@ h1 {
   font-weight: 700;
 }
 
-/* Text sections */
 .section-head h2,
-.statement h2,
 .contact h2,
 .gear-head h2 {
   margin-top: 12px;
@@ -266,26 +264,7 @@ h1 {
 }
 .section-head { max-width: 880px; margin-bottom: 44px; }
 
-/* Services */
-.services + .contact {
-  padding-top: 0;
-}
 
-.service-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 14px;
-}
-.service-card {
-  min-height: 330px;
-  padding: 26px;
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--line);
-  background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.035));
-}
-.service-card span { color: var(--soft); font-size: 13px; font-weight: 800; }
-.service-card h3 { margin-top: 90px; font-size: 27px; letter-spacing: -.032em; line-height: 1.12; }
-.service-card p { margin-top: 16px; color: var(--muted); line-height: 1.58; font-size: 15px; }
 
 /* Work grid */
 .work-grid {
@@ -370,11 +349,7 @@ h1 {
 .eski-kusak { background-image: url("assets/eski-kusak-cover.jpg"); background-position: left center; }
 .american-garage-editorial { background-image: url("assets/american-garage-editorial-cover.jpg"); background-position: center; }
 
-/* Statement / Gear / Contact */
-.statement { max-width: 1080px; text-align: center; }
-.statement p { color: var(--muted); font-weight: 800; margin-bottom: 20px; }
-.statement h2 { font-size: clamp(34px, 4.6vw, 66px); }
-
+/* Gear / Contact */
 .gear { position: relative; overflow: hidden; }
 .gear::before {
   content: "";
@@ -863,7 +838,6 @@ h1 {
 @media (max-width: 980px) {
   .hero { grid-template-columns: 1fr; padding-top: 135px; }
   .video-frame { aspect-ratio: 16/11; }
-  .service-grid,
   .work-grid,
   .gear-stage { grid-template-columns: 1fr; }
   .project-video-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -873,8 +847,6 @@ h1 {
   .work-grid-editorial .work-card,
   .work-grid-editorial .work-card-stack { min-height: 500px !important; }
   .work-grid-editorial .work-stack { display: grid !important; grid-template-rows: auto !important; }
-  .service-card { min-height: 250px; }
-  .service-card h3 { margin-top: 58px; }
   .work-card,
   .work-card.large { min-height: 520px; }
   .gear::before { display:none; }
@@ -923,7 +895,6 @@ h1 {
   }
   .site-header { height: 58px; }
   .section-pad { width: min(100% - 28px, var(--max)); padding: 86px 0; }
-  .services + .contact { padding-top: 0; }
   .hero { padding: 124px 14px 64px; gap: 34px; }
   h1 { font-size: clamp(44px, 13.5vw, 64px); line-height: 1.04; letter-spacing: -.04em; }
   .hero-copy { font-size: 20px; line-height: 1.42; }
@@ -931,7 +902,6 @@ h1 {
   .video-placeholder { padding: 22px; }
   .video-placeholder p { font-size: 28px; }
   .section-head h2,
-  .statement h2,
   .contact h2,
   .gear-head h2 { font-size: clamp(36px, 10.5vw, 54px); line-height: 1.08; letter-spacing: -.036em; }
   .gear-head > p:not(.section-kicker) { font-size: 18px; }
