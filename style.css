@@ -254,8 +254,6 @@ h1 {
 }
 
 /* Text sections */
-.intro { max-width: 980px; }
-.intro h2,
 .section-head h2,
 .statement h2,
 .contact h2,
@@ -265,14 +263,6 @@ h1 {
   line-height: 1.04;
   letter-spacing: -.048em;
   font-weight: 900;
-}
-.intro p:last-child {
-  max-width: 780px;
-  margin-top: 32px;
-  color: var(--muted);
-  font-size: clamp(20px, 1.9vw, 25px);
-  line-height: 1.5;
-  letter-spacing: -.018em;
 }
 .section-head { max-width: 880px; margin-bottom: 44px; }
 
@@ -935,12 +925,10 @@ h1 {
   .hero-actions .button { width: 100%; }
   .video-placeholder { padding: 22px; }
   .video-placeholder p { font-size: 28px; }
-  .intro h2,
   .section-head h2,
   .statement h2,
   .contact h2,
   .gear-head h2 { font-size: clamp(36px, 10.5vw, 54px); line-height: 1.08; letter-spacing: -.036em; }
-  .intro p:last-child,
   .gear-head > p:not(.section-kicker) { font-size: 18px; }
   .work-card,
   .work-card.large { min-height: 460px; }
