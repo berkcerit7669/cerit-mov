@@ -267,6 +267,10 @@ h1 {
 .section-head { max-width: 880px; margin-bottom: 44px; }
 
 /* Services */
+.services + .contact {
+  padding-top: 0;
+}
+
 .service-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -919,6 +923,7 @@ h1 {
   }
   .site-header { height: 58px; }
   .section-pad { width: min(100% - 28px, var(--max)); padding: 86px 0; }
+  .services + .contact { padding-top: 0; }
   .hero { padding: 124px 14px 64px; gap: 34px; }
   h1 { font-size: clamp(44px, 13.5vw, 64px); line-height: 1.04; letter-spacing: -.04em; }
   .hero-copy { font-size: 20px; line-height: 1.42; }
