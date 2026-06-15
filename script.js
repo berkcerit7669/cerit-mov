@@ -1,100 +1,51 @@
-const menuButton = document.querySelector('.menu-button');
-const mobileMenu = document.querySelector('.mobile-menu');
-const cursorGlow = document.querySelector('.cursor-glow');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="desktop-nav">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#work-grid">Work</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-menuButton?.addEventListener('click', () => {
-  const open = mobileMenu.classList.toggle('open');
-  menuButton.setAttribute('aria-expanded', String(open));
-  mobileMenu.setAttribute('aria-hidden', String(!open));
-});
+  <nav class="mobile-menu" aria-hidden="true">
+    <a href="#about">About</a>
+    <a href="#work-grid">Work</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-document.querySelectorAll('.mobile-menu a').forEach((link) => {
-  link.addEventListener('click', () => {
-    mobileMenu.classList.remove('open');
-    menuButton.setAttribute('aria-expanded', 'false');
-    mobileMenu.setAttribute('aria-hidden', 'true');
-  });
-});
+  <main>
+    <!-- Other content -->
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.14, rootMargin: '0px 0px -8% 0px' });
+    <div class="work-grid work-grid-editorial" id="work-grid">
+      <!-- Work items -->
+    </div>
 
-document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+    <!-- Other content -->
+  </main>
 
-window.addEventListener('mousemove', (event) => {
-  if (!cursorGlow) return;
-  cursorGlow.style.opacity = '1';
-  cursorGlow.style.left = `${event.clientX}px`;
-  cursorGlow.style.top = `${event.clientY}px`;
-});
+  <script src="script.js"></script>
+</body>
+</html>
+  
+/* Other CSS */
 
-window.addEventListener('mouseleave', () => {
-  if (!cursorGlow) return;
-  cursorGlow.style.opacity = '0';
-});
+#work-grid {
+  scroll-margin-top: 110px;
+}
 
-// Brand logo behavior: on the home page, scroll to top with controlled speed.
-// The temporary scrollBehavior override prevents CSS smooth-scroll from fighting the custom animation.
-(() => {
-  let brandScrollFrame = null;
+.work-grid-editorial {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr) !important;
+  gap: 18px !important;
+  align-items: stretch !important;
+}
 
-  const scrollToTopSmooth = () => {
-    const startY = window.scrollY || window.pageYOffset;
-    if (startY <= 0) return;
-
-    if (brandScrollFrame) {
-      cancelAnimationFrame(brandScrollFrame);
-    }
-
-    const duration = 1800;
-    const startTime = performance.now();
-    const html = document.documentElement;
-    const body = document.body;
-    const previousHtmlScrollBehavior = html.style.scrollBehavior;
-    const previousBodyScrollBehavior = body.style.scrollBehavior;
-
-    html.style.scrollBehavior = 'auto';
-    body.style.scrollBehavior = 'auto';
-
-    const easeInOutQuad = (t) => (
-      t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2
-    );
-
-    const animate = (currentTime) => {
-      const elapsed = currentTime - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      const easedProgress = easeInOutQuad(progress);
-      const nextY = Math.round(startY * (1 - easedProgress));
-
-      window.scrollTo(0, nextY);
-
-      if (progress < 1) {
-        brandScrollFrame = requestAnimationFrame(animate);
-        return;
-      }
-
-      window.scrollTo(0, 0);
-      window.history.replaceState(null, '', window.location.pathname);
-      html.style.scrollBehavior = previousHtmlScrollBehavior;
-      body.style.scrollBehavior = previousBodyScrollBehavior;
-      brandScrollFrame = null;
-    };
-
-    brandScrollFrame = requestAnimationFrame(animate);
-  };
-
-  document.addEventListener('click', (event) => {
-    const homeBrand = event.target.closest('[data-home-brand]');
-    if (!homeBrand) return;
-
-    event.preventDefault();
-    event.stopImmediatePropagation();
-    scrollToTopSmooth();
-  }, true);
-})();
+/* Other CSS */
