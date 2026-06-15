@@ -869,7 +869,8 @@ h1 {
   }
 
   .work-card .work-visual.bodybuilding {
-    background-position: 72% center !important;
+    background-image: url("assets/bodybuilding-head.jpg") !important;
+    background-position: center 28% !important;
     background-size: cover !important;
   }
   .footer { flex-direction: column; gap: 8px; }
