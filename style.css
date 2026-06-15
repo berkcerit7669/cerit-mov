@@ -254,8 +254,7 @@ h1 {
 }
 
 .section-head h2,
-.contact h2,
-.gear-head h2 {
+.contact h2 {
   margin-top: 12px;
   font-size: clamp(42px, 5.6vw, 78px);
   line-height: 1.04;
@@ -349,49 +348,7 @@ h1 {
 .eski-kusak { background-image: url("assets/eski-kusak-cover.jpg"); background-position: left center; }
 .american-garage-editorial { background-image: url("assets/american-garage-editorial-cover.jpg"); background-position: center; }
 
-/* Gear / Contact */
-.gear { position: relative; overflow: hidden; }
-.gear::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 240px;
-  width: 1px;
-  height: calc(100% - 360px);
-  background: linear-gradient(to bottom, transparent, rgba(255,255,255,.16), transparent);
-}
-.gear-head { max-width: 860px; margin: 0 auto 62px; text-align: center; }
-.gear-head > p:not(.section-kicker) {
-  max-width: 680px;
-  margin: 24px auto 0;
-  color: var(--muted);
-  font-size: 21px;
-  line-height: 1.55;
-  letter-spacing: -.018em;
-}
-.gear-stage { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; position: relative; }
-.gear-card {
-  min-height: 460px;
-  padding: 26px;
-  border: 1px solid rgba(255,255,255,.13);
-  border-radius: 34px;
-  background: radial-gradient(circle at 50% 10%, rgba(255,255,255,.11), transparent 42%), linear-gradient(180deg, rgba(255,255,255,.075), rgba(255,255,255,.03));
-  overflow: hidden;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  box-shadow: 0 30px 90px rgba(0,0,0,.24);
-}
-.gear-card:nth-child(even) { margin-top: 80px; }
-.gear-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(255,255,255,.10), transparent 35%); pointer-events: none; }
-.gear-visual { position: relative; height: 250px; display: grid; place-items: center; transform: translateZ(0); }
-.gear-text { position: relative; z-index: 2; }
-.gear-text span { color: var(--soft); font-size: 12px; font-weight: 900; text-transform: uppercase; letter-spacing: .14em; }
-.gear-text h3 { margin-top: 10px; font-size: clamp(30px, 3.4vw, 48px); line-height: 1.05; letter-spacing: -.04em; }
-.gear-text p { max-width: 480px; margin-top: 16px; color: rgba(245,245,247,.70); line-height: 1.58; letter-spacing: -.01em; }
-.gear-photo { width: min(100%, 280px); height: auto; object-fit: contain; display: block; filter: drop-shadow(0 26px 50px rgba(0,0,0,.42)); }
-.photo-visual { overflow: hidden; border-radius: 26px; background: radial-gradient(circle at 50% 10%, rgba(255,255,255,.06), rgba(255,255,255,.01) 60%); }
+/* Contact */
 
 .contact-inner {
   padding: clamp(34px, 8vw, 90px);
@@ -776,32 +733,6 @@ h1 {
 .project-cover[style*="tiburon-general-02.jpg"]::before { display: none; }
 .project-cover[style*="tiburon-general-02.jpg"]::after { inset: 0 0 -2px 0; background: linear-gradient(to bottom, rgba(0,0,0,.05), rgba(0,0,0,.70)); }
 
-/* Decorative gear shapes kept for older markup */
-.camera-body { width: 220px; height: 136px; border-radius: 26px; border: 2px solid rgba(255,255,255,.58); background: linear-gradient(145deg, rgba(255,255,255,.10), rgba(255,255,255,.02)); position: relative; box-shadow: inset 0 0 38px rgba(255,255,255,.04), 0 36px 80px rgba(0,0,0,.45); }
-.camera-body::before { content:""; position:absolute; width:66px; height:30px; left:26px; top:-22px; border:2px solid rgba(255,255,255,.45); border-bottom:0; border-radius:18px 18px 0 0; }
-.camera-body span { position:absolute; width:48px; height:48px; right:26px; top:23px; border-radius:50%; border:2px solid rgba(255,255,255,.42); }
-.camera-lens { position: absolute; width: 120px; height: 120px; border-radius: 50%; border: 2px solid rgba(255,255,255,.72); background: radial-gradient(circle, rgba(245,245,247,.28), rgba(245,245,247,.05) 45%, rgba(0,0,0,.35) 65%); }
-.lens-bar { width: 260px; height: 106px; border-radius: 32px; border: 2px solid rgba(255,255,255,.60); background: linear-gradient(90deg, rgba(255,255,255,.08), rgba(255,255,255,.02)); }
-.lens-ring { position:absolute; height:130px; width:46px; border-radius:18px; border:2px solid rgba(255,255,255,.42); }
-.ring-one { left: 35%; }
-.ring-two { right: 30%; }
-.gimbal-arm { width: 180px; height: 110px; border-top: 4px solid rgba(255,255,255,.62); border-right: 4px solid rgba(255,255,255,.62); border-radius: 0 44px 0 0; transform: rotate(-8deg); }
-.gimbal-head { position:absolute; width:92px; height:66px; border-radius:22px; border:2px solid rgba(255,255,255,.58); top:70px; left:50%; transform:translateX(-12%); }
-.gimbal-handle { position:absolute; width:38px; height:150px; border-radius:999px; border:2px solid rgba(255,255,255,.52); top:125px; left:50%; transform:translateX(-50%) rotate(-8deg); background:rgba(255,255,255,.04); }
-.light-box { width: 172px; height: 126px; border-radius: 24px; border:2px solid rgba(255,255,255,.62); background: radial-gradient(circle at 50% 50%, rgba(255,255,255,.30), rgba(255,255,255,.05) 52%); position:relative; z-index:2; }
-.light-stand { position:absolute; width:2px; height:120px; background:rgba(255,255,255,.42); top:155px; }
-.light-glow { position:absolute; width:260px; height:260px; border-radius:50%; background:radial-gradient(circle, rgba(255,255,255,.16), transparent 65%); filter:blur(8px); }
-.mic-pack { width:116px; height:150px; border-radius:30px; border:2px solid rgba(255,255,255,.62); background:linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.03)); position:relative; }
-.mic-pack::before { content:""; position:absolute; width:54px; height:10px; border-radius:20px; background:rgba(255,255,255,.46); left:31px; top:28px; }
-.wave { position:absolute; border:2px solid rgba(255,255,255,.26); border-left:0; border-bottom:0; transform:rotate(45deg); border-radius:0 36px 0 0; }
-.wave-one { width:80px; height:80px; right:150px; }
-.wave-two { width:130px; height:130px; right:124px; }
-.reflector-disc { width:210px; height:210px; border-radius:50%; border:2px solid rgba(255,255,255,.64); background:radial-gradient(circle at 32% 28%, rgba(255,255,255,.25), rgba(255,255,255,.05) 55%, rgba(0,0,0,.22)); box-shadow: inset -18px -18px 50px rgba(255,255,255,.05); }
-.reflector-line { position:absolute; width:160px; height:1px; background:rgba(255,255,255,.28); transform:rotate(-35deg); }
-.process-list { border-top: 1px solid var(--line); }
-.process-list div { display: grid; grid-template-columns: 90px 1fr; gap: 20px; padding: 30px 0; border-bottom: 1px solid var(--line); }
-.process-list span { color: var(--soft); font-weight: 900; }
-.process-list p { font-size: clamp(24px, 3.7vw, 40px); letter-spacing: -.04em; line-height: 1.14; font-weight: 850; }
 
 /* Animation */
 .cursor-glow {
@@ -838,8 +769,7 @@ h1 {
 @media (max-width: 980px) {
   .hero { grid-template-columns: 1fr; padding-top: 135px; }
   .video-frame { aspect-ratio: 16/11; }
-  .work-grid,
-  .gear-stage { grid-template-columns: 1fr; }
+  .work-grid { grid-template-columns: 1fr; }
   .project-video-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .work-grid-editorial { grid-template-columns: 1fr !important; }
   .work-grid-editorial .work-card-featured,
@@ -849,8 +779,6 @@ h1 {
   .work-grid-editorial .work-stack { display: grid !important; grid-template-rows: auto !important; }
   .work-card,
   .work-card.large { min-height: 520px; }
-  .gear::before { display:none; }
-  .gear-card:nth-child(even) { margin-top: 0; }
 }
 
 @media (max-width: 900px) {
@@ -902,14 +830,9 @@ h1 {
   .video-placeholder { padding: 22px; }
   .video-placeholder p { font-size: 28px; }
   .section-head h2,
-  .contact h2,
-  .gear-head h2 { font-size: clamp(36px, 10.5vw, 54px); line-height: 1.08; letter-spacing: -.036em; }
-  .gear-head > p:not(.section-kicker) { font-size: 18px; }
+  .contact h2 { font-size: clamp(36px, 10.5vw, 54px); line-height: 1.08; letter-spacing: -.036em; }
   .work-card,
   .work-card.large { min-height: 460px; }
-  .gear-card { min-height: 420px; padding: 22px; }
-  .gear-visual { height: 210px; transform: scale(.84); }
-  .process-list div { grid-template-columns: 58px 1fr; }
   .footer { flex-direction: column; gap: 8px; }
 }
 
