@@ -103,27 +103,30 @@ h1, h2, h3, p { margin: 0; }
 }
 
 .showreel-hero {
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   min-height: 100vh;
   height: auto;
-  padding: 128px 18px 88px;
+  padding: 132px max(18px, calc((100vw - var(--max)) / 2)) 118px;
   background: #000;
 }
 
 .showreel-hero-video {
   position: relative;
   z-index: 1;
-  width: min(100%, var(--max));
-  height: clamp(520px, 68vh, 760px);
+  width: 100%;
+  max-width: var(--max);
+  height: min(68vh, 720px);
+  min-height: 520px;
   object-fit: cover;
   object-position: center center;
   display: block;
   border: 1px solid var(--line);
   border-radius: var(--radius-xl);
   overflow: hidden;
-  filter: brightness(.95) contrast(1.04);
+  filter: brightness(.96) contrast(1.04);
   background: center / cover no-repeat url("assets/Iron_rebel/Photos/zKapak.jpg");
   box-shadow: 0 36px 120px rgba(0,0,0,.58);
 }
@@ -141,7 +144,7 @@ h1, h2, h3, p { margin: 0; }
 .showreel-scroll-link {
   position: absolute;
   left: 50%;
-  bottom: 34px;
+  bottom: 42px;
   transform: translateX(-50%);
   z-index: 4;
   min-height: 44px;
@@ -151,7 +154,7 @@ h1, h2, h3, p { margin: 0; }
   padding: 0 18px;
   border-radius: 999px;
   border: 1px solid rgba(255,255,255,.20);
-  background: rgba(15,15,17,.48);
+  background: rgba(15,15,17,.58);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
   color: rgba(245,245,247,.88);
@@ -790,8 +793,8 @@ h1 {
 
 /* Responsive */
 @media (max-width: 980px) {
-  .showreel-hero { min-height: 100svh; height: auto; padding: 118px 14px 78px; }
-  .showreel-hero-video { width: 100%; height: clamp(460px, 66svh, 680px); }
+  .showreel-hero { min-height: 100svh; height: auto; padding: 112px 14px 100px; }
+  .showreel-hero-video { width: 100%; height: min(64svh, 640px); min-height: 460px; }
   .work-grid { grid-template-columns: 1fr; }
   .project-video-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .work-grid-editorial { grid-template-columns: 1fr !important; }
@@ -846,9 +849,9 @@ h1 {
   }
   .site-header { height: 58px; }
   .section-pad { width: min(100% - 28px, var(--max)); padding: 86px 0; }
-  .showreel-hero { min-height: 100svh; height: auto; padding: 104px 14px 72px; }
-  .showreel-hero-video { height: clamp(420px, 64svh, 580px); border-radius: 24px; }
-  .showreel-scroll-link { bottom: 24px; }
+  .showreel-hero { min-height: 100svh; height: auto; padding: 96px 14px 92px; }
+  .showreel-hero-video { height: min(62svh, 560px); min-height: 420px; border-radius: 24px; }
+  .showreel-scroll-link { bottom: 28px; }
   h1 { font-size: clamp(44px, 13.5vw, 64px); line-height: 1.04; letter-spacing: -.04em; }
   .section-head h2,
   .contact h2 { font-size: clamp(36px, 10.5vw, 54px); line-height: 1.08; letter-spacing: -.036em; }
