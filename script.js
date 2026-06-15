@@ -1,51 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>My Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <nav class="desktop-nav">
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#work-grid">Work</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+const menuButton = document.querySelector('.menu-button');
+const mobileMenu = document.querySelector('.mobile-menu');
+const cursorGlow = document.querySelector('.cursor-glow');
 
-  <nav class="mobile-menu" aria-hidden="true">
-    <a href="#about">About</a>
-    <a href="#work-grid">Work</a>
-    <a href="#contact">Contact</a>
-  </nav>
+menuButton?.addEventListener('click', () => {
+  const open = mobileMenu.classList.toggle('open');
+  menuButton.setAttribute('aria-expanded', String(open));
+  mobileMenu.setAttribute('aria-hidden', String(!open));
+});
 
-  <main>
-    <!-- Other content -->
+document.querySelectorAll('.mobile-menu a').forEach((link) => {
+  link.addEventListener('click', () => {
+    mobileMenu.classList.remove('open');
+    menuButton?.setAttribute('aria-expanded', 'false');
+    mobileMenu.setAttribute('aria-hidden', 'true');
+  });
+});
 
-    <div class="work-grid work-grid-editorial" id="work-grid">
-      <!-- Work items -->
-    </div>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.14, rootMargin: '0px 0px -8% 0px' });
 
-    <!-- Other content -->
-  </main>
+document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 
-  <script src="script.js"></script>
-</body>
-</html>
-  
-/* Other CSS */
+window.addEventListener('mousemove', (event) => {
+  if (!cursorGlow) return;
+  cursorGlow.style.opacity = '1';
+  cursorGlow.style.left = `${event.clientX}px`;
+  cursorGlow.style.top = `${event.clientY}px`;
+});
 
-#work-grid {
-  scroll-margin-top: 110px;
-}
-
-.work-grid-editorial {
-  display: grid !important;
-  grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr) !important;
-  gap: 18px !important;
-  align-items: stretch !important;
-}
-
-/* Other CSS */
+window.addEventListener('mouseleave', () => {
+  if (!cursorGlow) return;
+  cursorGlow.style.opacity = '0';
+});

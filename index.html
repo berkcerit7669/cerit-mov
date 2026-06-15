@@ -29,35 +29,12 @@
   </div>
 
   <main>
-    <section class="hero section-pad">
-      <div class="noise" aria-hidden="true"></div>
-      <div class="hero-bg" aria-hidden="true">
-        <div class="orb orb-one"></div>
-        <div class="orb orb-two"></div>
-        <div class="grid-lines"></div>
-      </div>
-      <div class="hero-content reveal">
-        <p class="eyebrow">Işık Ayberk Cerit</p>
-        <h1>Görüntünün ritmini,<br />hikâyenin tonunu kurar.</h1>
-        <p class="hero-copy">Film, reklam ve sosyal medya içerikleri için sinematik çekim, kurgu ve color çalışmaları.</p>
-        <div class="hero-actions">
-          <a class="button primary" href="#showreel">Showreel’i İzle</a>
-          <a class="button secondary" href="#work">Projeleri Gör</a>
-        </div>
-      </div>
-      <div class="hero-card reveal delay-1" id="showreel">
-        <div class="video-frame showreel-bg">
-          <video class="showreel-video" autoplay muted loop playsinline>
-            <source src="assets/showreel/showreel-loop.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="card-meta">
-          <span>Production</span>
-          <span>Editing</span>
-          <span>Color</span>
-          <span>Social Content</span>
-        </div>
-      </div>
+    <section class="hero showreel-hero" id="top">
+      <video class="showreel-hero-video" autoplay muted loop playsinline preload="metadata" poster="assets/raindogs-cover.jpg">
+        <source src="assets/showreel/showreel-loop.mp4" type="video/mp4">
+      </video>
+      <div class="showreel-hero-shade" aria-hidden="true"></div>
+      <a class="showreel-scroll-link" href="#work-grid" aria-label="Projeleri gör">Projeleri Gör</a>
     </section>
 
 
@@ -173,6 +150,6 @@
     <span>© 2026 Işık Ayberk Cerit</span>
   </footer>
 
-  <script src="script.js?v=2"></script>
+  <script src="script.js?v=3"></script>
 </body>
 </html>
