@@ -117,7 +117,8 @@ h1, h2, h3, p { margin: 0; }
   object-fit: cover;
   object-position: center center;
   display: block;
-  filter: brightness(.72) contrast(1.04);
+  filter: brightness(.95) contrast(1.04);
+  background: center / cover no-repeat url("assets/raindogs-cover.jpg");
 }
 
 .showreel-hero-shade {
@@ -125,8 +126,8 @@ h1, h2, h3, p { margin: 0; }
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(circle at 50% 50%, transparent 0%, rgba(0,0,0,.28) 58%, rgba(0,0,0,.72) 100%),
-    linear-gradient(to bottom, rgba(0,0,0,.22), rgba(0,0,0,.08) 42%, rgba(0,0,0,.70));
+    radial-gradient(circle at 50% 50%, transparent 0%, rgba(0,0,0,.10) 62%, rgba(0,0,0,.42) 100%),
+    linear-gradient(to bottom, rgba(0,0,0,.18), rgba(0,0,0,.02) 46%, rgba(0,0,0,.36));
 }
 
 .showreel-scroll-link {
