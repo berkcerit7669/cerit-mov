@@ -106,7 +106,7 @@ h1, h2, h3, p { margin: 0; }
 .showreel-hero {
   display: block;
   padding: 0;
-  background: #000;
+  background: #000 url("assets/Adventure/Photos/zKapak.jpg") center / cover no-repeat;
 }
 
 .showreel-hero-video {
@@ -118,7 +118,7 @@ h1, h2, h3, p { margin: 0; }
   object-position: center center;
   display: block;
   filter: brightness(.95) contrast(1.04);
-  background: center / cover no-repeat url("assets/raindogs-cover.jpg");
+  background: center / cover no-repeat url("assets/Adventure/Photos/zKapak.jpg");
 }
 
 .showreel-hero-shade {
