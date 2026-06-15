@@ -858,12 +858,19 @@ h1 {
   .work-card,
   .work-card.large { min-height: 460px; }
 
-  .model-shoot {
-    background-position: center 18%;
+  .work-card:has(.model-shoot),
+  .work-card:has(.bodybuilding) {
+    min-height: 560px !important;
   }
 
-  .bodybuilding {
-    background-position: center 30%;
+  .work-card .work-visual.model-shoot {
+    background-position: center 58% !important;
+    background-size: cover !important;
+  }
+
+  .work-card .work-visual.bodybuilding {
+    background-position: 72% center !important;
+    background-size: cover !important;
   }
   .footer { flex-direction: column; gap: 8px; }
 }
