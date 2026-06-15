@@ -857,6 +857,14 @@ h1 {
   .contact h2 { font-size: clamp(36px, 10.5vw, 54px); line-height: 1.08; letter-spacing: -.036em; }
   .work-card,
   .work-card.large { min-height: 460px; }
+
+  .model-shoot {
+    background-position: center 18%;
+  }
+
+  .bodybuilding {
+    background-position: center 30%;
+  }
   .footer { flex-direction: column; gap: 8px; }
 }
 
