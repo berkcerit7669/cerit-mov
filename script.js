@@ -2,6 +2,12 @@ const menuButton = document.querySelector('.menu-button');
 const mobileMenu = document.querySelector('.mobile-menu');
 const cursorGlow = document.querySelector('.cursor-glow');
 
+document.querySelector('.brand')?.addEventListener('click', (event) => {
+  event.preventDefault();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  history.replaceState(null, '', `${location.pathname}${location.search}`);
+});
+
 // Mobile devices should hand e-mail links to the user's default mail app.
 // On desktop, open Gmail in a new tab so the link also works without a
 // configured system mail client.
