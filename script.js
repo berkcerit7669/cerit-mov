@@ -5,8 +5,9 @@ const cursorGlow = document.querySelector('.cursor-glow');
 // Mobile devices should hand e-mail links to the user's default mail app.
 // On desktop, open Gmail in a new tab so the link also works without a
 // configured system mail client.
-const isMobileDevice = navigator.userAgentData?.mobile
-  ?? /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
+const isMobileDevice = navigator.userAgentData?.mobile === true
+  || /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent)
+  || (window.matchMedia('(pointer: coarse)').matches && window.innerWidth <= 1024);
 
 if (!isMobileDevice) {
   document.querySelectorAll('.email-link[data-email]').forEach((link) => {
