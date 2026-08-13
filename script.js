@@ -16,16 +16,22 @@ document.querySelectorAll('.mobile-menu a').forEach((link) => {
   });
 });
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.14, rootMargin: '0px 0px -8% 0px' });
+const revealElements = document.querySelectorAll('.reveal');
 
-document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+if ('IntersectionObserver' in window) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.14, rootMargin: '0px 0px -8% 0px' });
+
+  revealElements.forEach((el) => observer.observe(el));
+} else {
+  revealElements.forEach((el) => el.classList.add('visible'));
+}
 
 window.addEventListener('mousemove', (event) => {
   if (!cursorGlow) return;

@@ -14,7 +14,7 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: clip; }
 body {
   margin: 0;
   font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -364,8 +364,6 @@ h1 {
 
 .rd { background-image: url("assets/raindogs-cover.jpg"); background-position: center; }
 .ladude { background-image: url("assets/ladude-cover.jpg"); background-position: center; }
-.oit { background-image: url("assets/choose-cover.jpg"); background-position: center; }
-.tadlem { background-image: url("assets/tadlem-cover.jpg"); background-position: center; }
 .offroad { background-image: url("assets/offroad-cover.jpg"); background-position: center; }
 .tiburon { background-image: url("assets/tiburon-cover.jpg"); background-position: center top; }
 .model-shoot { background-image: url("assets/model-shoot-cover.jpg"); background-position: center top; }
@@ -640,14 +638,16 @@ h1 {
   border: 1px solid var(--line);
   border-radius: 26px;
   background: #000;
+  aspect-ratio: 16 / 9;
+  contain: layout paint;
   box-shadow: 0 28px 90px rgba(0,0,0,.38);
 }
 .project-video-wrap video {
   display: block;
   width: 100%;
   max-width: 920px;
-  height: auto;
-  max-height: 520px;
+  height: 100%;
+  max-height: none;
   margin-left: auto;
   margin-right: auto;
   object-fit: contain;
@@ -673,11 +673,11 @@ h1 {
   width: min(100%, 920px);
   max-width: 920px;
   height: auto;
-  aspect-ratio: auto;
+  aspect-ratio: 16 / 9;
 }
 .project-video-wrap.horizontal-player video {
   width: 100%;
-  height: auto;
+  height: 100%;
   max-width: 100%;
   max-height: none;
   object-fit: contain;
@@ -789,6 +789,18 @@ h1 {
 @keyframes float {
   from { transform: translate3d(0,0,0) scale(1); }
   to { transform: translate3d(-35px, 28px, 0) scale(1.08); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal,
+  .reveal.from-left,
+  .reveal.from-right {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .work-visual { transition: none; }
 }
 
 /* Responsive */
