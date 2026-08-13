@@ -11,9 +11,8 @@ const isMobileDevice = navigator.userAgentData?.mobile === true
 
 document.querySelector('.brand')?.addEventListener('click', (event) => {
   const isSamePageLink = event.currentTarget.getAttribute('href').startsWith('#');
-  const isMobileLayout = window.matchMedia('(max-width: 720px)').matches;
 
-  if (!isMobileLayout && !isSamePageLink) return;
+  if (!isSamePageLink) return;
 
   event.preventDefault();
   window.scrollTo({ top: 0, behavior: 'smooth' });
