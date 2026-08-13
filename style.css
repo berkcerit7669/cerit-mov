@@ -940,7 +940,8 @@ h1 {
 
   .work-card .work-visual.model-shoot,
   .work-visual.model-shoot {
-    background-position: 88% 58% !important;
+    background-image: url("assets/model-shoot-04.jpg") !important;
+    background-position: center 32% !important;
     background-size: cover !important;
   }
 

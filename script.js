@@ -2,18 +2,23 @@ const menuButton = document.querySelector('.menu-button');
 const mobileMenu = document.querySelector('.mobile-menu');
 const cursorGlow = document.querySelector('.cursor-glow');
 
-document.querySelector('.brand')?.addEventListener('click', (event) => {
-  event.preventDefault();
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-  history.replaceState(null, '', `${location.pathname}${location.search}`);
-});
-
 // Mobile devices should hand e-mail links to the user's default mail app.
 // On desktop, open Gmail in a new tab so the link also works without a
 // configured system mail client.
 const isMobileDevice = navigator.userAgentData?.mobile === true
   || /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent)
   || (window.matchMedia('(pointer: coarse)').matches && window.innerWidth <= 1024);
+
+document.querySelector('.brand')?.addEventListener('click', (event) => {
+  const isSamePageLink = event.currentTarget.getAttribute('href').startsWith('#');
+  const isMobileLayout = window.matchMedia('(max-width: 720px)').matches;
+
+  if (!isMobileLayout && !isSamePageLink) return;
+
+  event.preventDefault();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  history.replaceState(null, '', `${location.pathname}${location.search}`);
+});
 
 if (!isMobileDevice) {
   document.querySelectorAll('.email-link[data-email]').forEach((link) => {
@@ -48,7 +53,7 @@ if ('IntersectionObserver' in window) {
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.14, rootMargin: '0px 0px -8% 0px' });
+  }, { threshold: 0.02, rootMargin: '0px 0px -8% 0px' });
 
   revealElements.forEach((el) => observer.observe(el));
 } else {
