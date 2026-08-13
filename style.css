@@ -127,7 +127,7 @@ h1, h2, h3, p { margin: 0; }
   border-radius: var(--radius-xl);
   overflow: hidden;
   filter: brightness(.96) contrast(1.04);
-  background: center / cover no-repeat url("assets/Iron_rebel/Photos/zKapak.jpg");
+  background: center / cover no-repeat url("assets/projects/tiburon/iron-rebel/Photos/zKapak.jpg");
   box-shadow: 0 36px 120px rgba(0,0,0,.58);
 }
 
@@ -235,7 +235,7 @@ h1 {
 .showreel-bg {
   background:
     linear-gradient(to bottom, rgba(0,0,0,.16), rgba(0,0,0,.58)),
-    center / cover no-repeat url("assets/raindogs-cover.jpg");
+    center / cover no-repeat url("assets/projects/raindogs/raindogs-cover.jpg");
 }
 .video-placeholder {
   position: absolute;
@@ -362,15 +362,15 @@ h1 {
 .work-grid-editorial .work-info h3 { max-width: 100% !important; overflow-wrap: normal !important; word-break: normal !important; }
 .work-grid-editorial .work-info span { max-width: 540px !important; }
 
-.rd { background-image: url("assets/raindogs-cover.jpg"); background-position: center; }
-.ladude { background-image: url("assets/ladude-cover.jpg"); background-position: center; }
-.offroad { background-image: url("assets/offroad-cover.jpg"); background-position: center; }
-.tiburon { background-image: url("assets/tiburon-cover.jpg"); background-position: center top; }
-.model-shoot { background-image: url("assets/model-shoot-cover.jpg"); background-position: center top; }
-.bodybuilding { background-image: url("assets/bodybuilding-cover.jpg"); background-position: left center; }
-.imdb-headshot { background-image: url("assets/imdb-headshot-cover.jpg"); background-position: left center; }
-.eski-kusak { background-image: url("assets/eski-kusak-cover.jpg"); background-position: left center; }
-.american-garage-editorial { background-image: url("assets/american-garage-editorial-cover.jpg"); background-position: center; }
+.rd { background-image: url("assets/projects/raindogs/raindogs-cover.jpg"); background-position: center; }
+.ladude { background-image: url("assets/projects/ladude/ladude-cover.jpg"); background-position: center; }
+.offroad { background-image: url("assets/projects/offroad/offroad-cover.jpg"); background-position: center; }
+.tiburon { background-image: url("assets/projects/tiburon/shared/tiburon-cover.jpg"); background-position: center top; }
+.model-shoot { background-image: url("assets/projects/model-shoot/model-shoot-cover.jpg"); background-position: center top; }
+.bodybuilding { background-image: url("assets/projects/bodybuilding/bodybuilding-cover.jpg"); background-position: left center; }
+.imdb-headshot { background-image: url("assets/projects/imdb-headshot/imdb-headshot-cover.jpg"); background-position: left center; }
+.eski-kusak { background-image: url("assets/projects/eski-kusak/eski-kusak-cover.jpg"); background-position: left center; }
+.american-garage-editorial { background-image: url("assets/projects/eski-kusak/american-garage-editorial-cover.jpg"); background-position: center; }
 
 /* Contact */
 
@@ -945,7 +945,7 @@ h1 {
 
   .work-card .work-visual.model-shoot,
   .work-visual.model-shoot {
-    background-image: url("assets/model-shoot-04.jpg") !important;
+    background-image: url("assets/projects/model-shoot/model-shoot-04.jpg") !important;
     background-position: center 32% !important;
     background-size: cover !important;
   }
@@ -953,7 +953,7 @@ h1 {
   .work-card .work-visual.bodybuilding,
   .work-visual.bodybuilding,
   .bodybuilding {
-    background-image: url("assets/bodybuilding-head.jpg") !important;
+    background-image: url("assets/projects/bodybuilding/bodybuilding-head.jpg") !important;
     background-position: 8% 28% !important;
     background-size: cover !important;
   }
